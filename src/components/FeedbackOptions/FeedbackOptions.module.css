@@ -1,0 +1,22 @@
+.button {
+  background-color: rgb(158, 158, 241);
+  color: whitesmoke;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.9;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  border-style: unset;
+  border-radius: 4px;
+  padding: 10px 32px;
+  margin-right: 10px;
+
+  cursor: pointer;
+}
+
+.button:last-child {
+  margin: 0;
+}
