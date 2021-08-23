@@ -5,19 +5,20 @@ import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 import s from "../FeedbackOptions/FeedbackOptions.module.css";
 
 const FeedbackOptions = ({ onLeaveFeedback, options }) => {
+  // console.log(options);
   return (
     <>
       {options.map((option) => {
         return (
           <button
             type="button"
-            key={option}
-            name={option}
+            key={option.id}
+            name={option.label}
             className={s.button}
             onClick={onLeaveFeedback}
-            data-value={option}
+            data-value={option.value}
           >
-            {capitalizeFirstLetter(option)}
+            {capitalizeFirstLetter(option.value)}
           </button>
         );
       })}
@@ -28,6 +29,6 @@ const FeedbackOptions = ({ onLeaveFeedback, options }) => {
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  options: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
